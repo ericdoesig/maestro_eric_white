@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter UI Layouts Home Page'),
+          title: Text('White Key/Basic Key Practice'),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(
@@ -59,10 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
               // The ratio between the width and height of items
               childAspectRatio: 0.75,
               // List of items widgets
-              children: items.map<Widget>((Item item) => _ItemGridCellWidget(item)).toList(),
+              children: items
+                  .map<Widget>((Item item) => _ItemGridCellWidget(item))
+                  .toList(),
             ),
             // ListView tab content Widget
-            ListView.builder(itemCount: items.length, itemBuilder: (BuildContext context, int position) => _ItemListCellWidget(items[position]))
+            ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int position) =>
+                    _ItemListCellWidget(items[position]))
           ],
         ),
       ),
@@ -130,9 +135,10 @@ class _ItemListCellWidget extends StatelessWidget {
           fontSize: 20,
         ),
       ),
+      isThreeLine: true,
       subtitle: Text(
         _item.description,
-        maxLines: 2,
+        maxLines: 3,
         style: TextStyle(),
       ),
       leading: Hero(
@@ -163,7 +169,7 @@ class _ItemFullScreenWidget extends StatelessWidget {
       body: SizedBox.expand(
         child: Hero(
           tag: _item.name,
-          child: Image.network(
+          child: Image.asset(
             _item.imageUrl,
             fit: BoxFit.cover,
           ),
@@ -175,38 +181,41 @@ class _ItemFullScreenWidget extends StatelessWidget {
 
 List<Item> items = [
   Item(
-    "https://i.pinimg.com/originals/df/0a/3e/df0a3e2ec30abb1c92d145ef165b714f.gif",
-    "Nature 1",
-    """Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""",
+    "https://3.files.edl.io/1990/19/10/21/160945-c17719dd-1c2a-45b1-be28-79f225bf878a.jpg",
+    "White Keys",
+    """The first three and the most essential keys to learn when it comes to the white keys.""",
   ),
   Item(
-    "https://i.pinimg.com/originals/40/c3/be/40c3bef82a8077e5c872808eefff5c6d.png",
-    "Nature 2",
-    "Description",
+    "https://th.bing.com/th/id/R.87ab9cd6535abb9d2f1a3bf57c7c4567?rik=XIgDEaW18TLmig&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fdT6%2f7aq%2fdT67aqpT9.jpeg&ehk=dI03yjQsd9cB2eSVgX33JGQIpWy6EAlurDuByQ4iuSg%3d&risl=&pid=ImgRaw&r=0",
+    "C Key",
+    """Out of the three the C key is the lowest pitch and comes first on the keyboard.""",
   ),
   Item(
-    "https://image.freepik.com/free-vector/flat-design-baby-shark-cartoon-style_52683-36255.jpg",
-    "Nature 3",
-    "Description",
+    "https://cdn.schoolofrock.com/img/news-article-hero/beginner-songs-for-piano-1637113460.jpg",
+    "D key",
+    """The D key is the middle ground out of the three keys and is the second key from the left.""",
   ),
   Item(
-    "https://image.freepik.com/free-vector/fairytale-concept-with-child-reading_23-2148472951.jpg",
-    "Sensetpier",
-    "Description",
+    "https://images.squarespace-cdn.com/content/v1/5762dcb820099e88525c2529/1469152515826-I6HEAIKF165RRVFXRB1N/music-teacher?format=1000w",
+    "E key",
+    """The E key has the highest pitch and a personal favorite of a lot of people, this key is the third.""",
   ),
   Item(
-    "https://img.freepik.com/free-vector/spring-landscape-scene_23-2148860692.jpg",
-    "Nature 5",
-    "Description",
+    'https://i0.wp.com/www.thepianoinstructor.com/wp-content/uploads/2017/09/Musical_Alphabet_F-B_Lrg.png?resize=202%2C201&ssl=1',
+    "F key",
+    """The F key is the fourth key from the left is the begining of the four keys F,G,A,and B and lowest tone.""",
   ),
   Item(
-    "https://pw.artfile.me/wallpaper/20-03-2017/650x366/vektornaya-grafika-priroda--nature-sneg--1143282.jpg",
-    "Night Nature",
-    "Description",
+    'https://i0.wp.com/www.thepianoinstructor.com/wp-content/uploads/2017/09/Musical_Alphabet_F-B_Lrg.png?resize=202%2C201&ssl=1',
+    "G key",
+    """The G key is the fifth key from the left in the middle of the 4.""",
   ),
+  Item(
+      'https://i0.wp.com/www.thepianoinstructor.com/wp-content/uploads/2017/09/Musical_Alphabet_F-B_Lrg.png?resize=202%2C201&ssl=1',
+      "A key",
+      """The A key is the sixth key from the left is the second to last key of the four."""),
+  Item(
+      'https://i0.wp.com/www.thepianoinstructor.com/wp-content/uploads/2017/09/Musical_Alphabet_F-B_Lrg.png?resize=202%2C201&ssl=1',
+      "F key",
+      """The B key is the seventh key from the left and the last of the four keys."""),
 ];
